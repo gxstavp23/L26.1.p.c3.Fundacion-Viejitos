@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumento sueldo</title>
+</head>
+<body>
+    <section id="body">
+        <h2>Fundacion Viejitos HTML-Plano</h2>
+         
+        <button id="body_btAgregarDonante">Agregar donante</button>
+        <hr>
+          <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Cantidad Dolares</th>
+          <th>Cantidad Bolivares</th>
+        </tr>
+      </thead>
+      <tbody id="body_donantes"></tbody>
+    </table>
+    
+    <hr>
+
+    <div>
+        En total se recaudaron: <span  id="body_lblTotalRecaudadoDolar"></span>     <span id="body_lblTotalRecaudadoBs"></span>
+    </div>
+
+    <div>
+        el mejor donante fue: <span id="body_lblMejorDonante">""</span>
+    </div>
+
+    <br>
+    <br>
+
+    
+    
+    <div style="margin-top: 15px; border: 2px solid #b4b4b4; padding: 25px; width: 300px;" >
+        <h3>----Reporte Extra arrays----</h3>
+        <span id="body_lblInfoExtra"></span>
+        
+    </div>
+
+
+
+    </section>
+    <hr>
+
+    <section id="donante" hidden style="margin-top: 20px; border: 1px solid #b4b4b4; padding: 15px; width: 300px;">
+
+        <h4>Procesar donante</h4>
+
+    
+        <div>
+            <label >Nombre
+                <input type="text" id="donante_inNombre" placeholder="Pepe">
+            </label>
+        </div>
+
+        <div>
+            <label >Aporte en dolares
+                <input type="number" id="donante_inDolares" placeholder="40">
+            </label>
+        </div>
+        
+        <div>
+            <label >Aporte en bolivares
+                <input type="number" id="donante_inBolivares" placeholder="80">
+            </label>
+        </div>
+        
+         <br>
+
+         <div>
+            <button id="donante_btCancelar">Cancelar</button>
+            <button id="donante_btAceptar">Aceptar</button>
+
+         </div>
+ 
+
+    </section>
+
+    <script type="module">
+        import Cl_cDonante from "./dist/controllers/Cl_cDonante.js"
+        import Cl_cFundacion from "./dist/controllers/Cl_cFundacion.js"
+        
+        import Cl_vDonante from "./dist/views/Cl_vDonante.js";
+        import Cl_vFundacion from "./dist/views/Cl_vFundacion.js";
+
+        const vistaDonante = new Cl_vDonante();        
+        const vistaFundacion = new Cl_vFundacion();
+        
+        const controladorDonante = new Cl_cDonante(vistaDonante);
+        new Cl_cFundacion(vistaFundacion, controladorDonante);
+    </script>
+    
+</body>
+</html>
